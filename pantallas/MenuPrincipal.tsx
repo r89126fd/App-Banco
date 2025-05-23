@@ -4,12 +4,13 @@ import { useNavigation } from '@react-navigation/native'
 export default function MenuPrincipal() {
   const ir = useNavigation<any>()
 
+  // Este menú es para ver las cosas básicas nada más
   return (
     <View style={{ padding: 22 }}>
       <Text style={{ fontSize: 23, marginBottom: 20 }}>Hola</Text>
 
       <Text style={{ marginBottom: 12 }}>
-        Menu:
+        Escoge lo que querés ver:
       </Text>
 
       <View style={{ marginBottom: 10 }}>

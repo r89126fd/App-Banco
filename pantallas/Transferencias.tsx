@@ -11,12 +11,12 @@ export default function Transferencias() {
     const montoFinal = parseFloat(dinero)
 
     if (!montoFinal || montoFinal <= 0) {
-      Alert.alert("Coloque un valor válido, por favor.")
+      Alert.alert("Coloque un valor válido")
       return;
     }
 
     if (montoFinal % 100 !== 0) {
-      Alert.alert("El valor tiene que ser múltiplo de L.100.")
+      Alert.alert("El valor tiene que ser múltiplo de L.100")
       return;
     }
 
@@ -24,11 +24,11 @@ export default function Transferencias() {
     const exito = saldoCtx.transferir(montoFinal, mensaje)
 
     if (exito) {
-      Alert.alert("¡Listo! Se mandó el dinero.")
+      Alert.alert("Se mando el dinero.")
       cambiarCuenta('')
       cambiarMonto('')
     } else {
-      Alert.alert("Saldo insuficiente 😓")
+      Alert.alert("Saldo insuficiente ")
     }
   }
 
