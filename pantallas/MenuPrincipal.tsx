@@ -1,29 +1,30 @@
-import { View, Button, Text } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import * as ReactNative from 'react-native'
+import { useNavigation as obtenerRuta } from '@react-navigation/native'
 
-export default function MenuPrincipal() {
-  const ir = useNavigation<any>()
+export default function PantallaMenu() {
+  const direccionar = obtenerRuta<any>()
 
-  // Este menú es para ver las cosas básicas nada más
+  const menu = [
+    ['Inicio ', 'Inicio'],
+    ['Transferencias', 'Transferencias'],
+    ['Resumen de Movimientos', 'Historial'],
+  ]
+
   return (
-    <View style={{ padding: 22 }}>
-      <Text style={{ fontSize: 23, marginBottom: 20 }}>Hola</Text>
+    <ReactNative.View style={{ paddingHorizontal: 20, paddingTop: 25 }}>
+      <ReactNative.Text style={{ fontSize: 22, marginBottom: 18 }}>
+        Bienvenido al panel
+      </ReactNative.Text>
 
-      <Text style={{ marginBottom: 12 }}>
-        Escoge lo que querés ver:
-      </Text>
+      <ReactNative.Text style={{ marginBottom: 14 }}>
+        Elige una de las siguientes secciones:
+      </ReactNative.Text>
 
-      <View style={{ marginBottom: 10 }}>
-        <Button title="Ver Saldo e Inicio" onPress={() => ir.navigate('Inicio')} />
-      </View>
-
-      <View style={{ marginBottom: 10 }}>
-        <Button title="Ir a Transferencias" onPress={() => ir.navigate('Transferencias')} />
-      </View>
-
-      <View style={{ marginBottom: 10 }}>
-        <Button title="Ver Movimientos" onPress={() => ir.navigate('Historial')} />
-      </View>
-    </View>
+      {menu.map(([nombre, ruta]) => (
+        <ReactNative.View key={ruta} style={{ marginBottom: 12 }}>
+          <ReactNative.Button title={nombre} onPress={() => direccionar.navigate(ruta)} />
+        </ReactNative.View>
+      ))}
+    </ReactNative.View>
   )
 }

@@ -12,12 +12,12 @@ export default function Inicio() {
 
   return (
     <View style={{ padding: 16 }}>
-      <Text style={{ fontSize: 20, fontWeight: '600' }}>Hey, bienvenido 👋</Text>
+      <Text style={{ fontSize: 20, fontWeight: '600' }}> bienvenido </Text>
       <Text style={{ marginTop: 10, marginBottom: 15 }}>
-        Tienes L.{cosas.saldo} guardados 🤑
+        Tienes L.{cosas.saldo} 
       </Text>
 
-      {/* Este botón es para hacer pruebas de depósito */}
+      {/* Este botón es para hacer pruebas de deposito */}
       <Button title="Sumar 500 Lempiras" onPress={cosas.depositar} />
 
       <Text style={{ marginTop: 25, marginBottom: 5, fontWeight: 'bold' }}>
